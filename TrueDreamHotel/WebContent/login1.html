@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Welcome to My Hotel</title>
+<script type="text/javascript">
+function validate()
+{
+	
+	if(document.form.email.value=="")
+	{
+		//alert("please enter your EMAIL");
+		document.form.email.focus();
+		document.getElementById("emailLocation").innerHTML = "* please enter your EMAIL";
+		return false;
+	}
+	else if(document.form.password.value=="")
+		{
+		//alert("please enter your PASSWORD");
+		document.getElementById("passLocation").innerHTML = "* please enter your PASSWORD";
+		return false;
+		}
+	else{
+		return true;
+	}
+	
+}
+</script>
+</head>
+<body bgcolor="#F7DC6F  ">            
+                           
+<form action="Login.jsp" method="post" name="form" onsubmit="return validate() ">
+<table align="center" border="0" height="100px"  style="margin-top: 200px">
+
+
+<tr>
+<td width="200px">Email Address</td>
+<td><input type="email" name="email" placeholder="Enter your Email" >
+<span id="emailLocation" style="color: red"></span>
+</td>
+</tr>
+<tr>
+<td>Password</td>
+<td><input type="password" name="password" placeholder="Enter your Password">
+<span id="passLocation" style="color: red"></span>
+</td>
+</tr>
+<tr>
+<td align="center" colspan="2"><button type="submit" value="LOGIN" style="background-color: gray">LOGIN</button></td>
+</tr>
+</table>
+</form>
+</div>
+</body>
+
+</html>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping package="domain">
+<class name="RoomDetails" table="myRoom">
+<id name="roomId" column="roomId" type="int">
+<generator class="increment" />
+</id>
+<property name="roomName"/>
+<property name="price" column="price" type="double"/>
+<property name="status" column="status" />
+
+<set name="registration" table="UserTable">
+<key column="roomId"/>
+<many-to-many class="Registration" column="regId"/>
+</set>
+
+</class>
+</hibernate-mapping>
